@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title> To Do List </title>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+          <%= title  %>
+        </div>
+
+        <form class="form" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off" required>
+            <button type="submit" name="list" value="Submit"> + </button>
+        </form>
+
+        <div class="box">
+
+            <ul>
+
+                <% for(i=0;i<locals.items.length;i++) {%>
+        
+                    <div class="item">
+                        <input type="checkbox" class="strikeThrough"> 
+                        <span> <%= items[i]  %> </span>   
+                    </div>
+
+                <% } %>
+
+            </ul>
+     
+        </div>
+      
+</div> 
+
+<%- include("partials/footer.ejs"); -%>
+
+</body>
+</html>
+
+
+
